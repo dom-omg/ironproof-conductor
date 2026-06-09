@@ -3,6 +3,7 @@ import Fastify from 'fastify'
 import cors from '@fastify/cors'
 import jwt from '@fastify/jwt'
 import { initDb } from './db/index'
+import { autoSeed } from './startup'
 import { productRoutes } from './routes/products'
 import { environmentRoutes } from './routes/environments'
 import { deploymentRoutes } from './routes/deployments'
@@ -31,6 +32,7 @@ app.addHook('onRequest', async (req, reply) => {
 })
 
 initDb()
+autoSeed()
 
 await app.register(productRoutes)
 await app.register(environmentRoutes)
