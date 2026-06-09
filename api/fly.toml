@@ -1,0 +1,46 @@
+app = "ironproof-conductor-api"
+primary_region = "yyz"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  PORT = "3001"
+  HOST = "0.0.0.0"
+  NODE_ENV = "production"
+  DATABASE_PATH = "/data/conductor.db"
+
+[mounts]
+  source = "conductor_data"
+  destination = "/data"
+
+[[services]]
+  protocol = "tcp"
+  internal_port = 3001
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 1
+
+  [[services.ports]]
+    port = 80
+    handlers = ["http"]
+    force_https = true
+
+  [[services.ports]]
+    port = 443
+    handlers = ["tls", "http"]
+
+  [services.concurrency]
+    type = "connections"
+    hard_limit = 50
+    soft_limit = 25
+
+[checks]
+  [checks.health]
+    grace_period = "10s"
+    interval = "30s"
+    method = "GET"
+    path = "/api/health"
+    port = 3001
+    timeout = "5s"
+    type = "http"
