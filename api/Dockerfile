@@ -1,7 +1,7 @@
 FROM node:20-alpine AS builder
 WORKDIR /app
 COPY package*.json ./
-RUN npm ci
+RUN npm install --ignore-scripts
 COPY tsconfig.json ./
 COPY src ./src
 RUN npm run build
@@ -11,7 +11,7 @@ RUN apk add --no-cache curl git
 
 WORKDIR /app
 COPY package*.json ./
-RUN npm ci --omit=dev
+RUN npm install --omit=dev --ignore-scripts
 COPY --from=builder /app/dist ./dist
 
 RUN mkdir -p /app/data

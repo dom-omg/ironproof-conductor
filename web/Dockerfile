@@ -1,11 +1,7 @@
-FROM node:20-alpine AS deps
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci
-
 FROM node:20-alpine AS builder
 WORKDIR /app
-COPY --from=deps /app/node_modules ./node_modules
+COPY package*.json ./
+RUN npm install --ignore-scripts
 COPY . .
 ARG NEXT_PUBLIC_API_URL=https://ironproof-conductor-api.fly.dev
 ARG NEXT_PUBLIC_CONDUCTOR_KEY
