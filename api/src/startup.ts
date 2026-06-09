@@ -15,6 +15,14 @@ const SEED_PRODUCTS = [
   { name: 'Chain Guardian', slug: 'chain-guardian', githubRepo: 'dom-omg/chain-guardian', deployType: 'fly', deployConfig: { appName: 'chain-guardian', region: 'yyz' }, liveUrl: 'https://chain-guardian.fly.dev' },
   { name: 'Verdict Engine', slug: 'verdict-engine', githubRepo: 'dom-omg/verdict-engine', deployType: 'fly', deployConfig: { appName: 'verdict-engine', region: 'yyz' }, liveUrl: 'https://verdict-engine.fly.dev' },
   { name: 'SENTINEL', slug: 'sentinel', githubRepo: 'dom-omg/blackpoint-sentinel', deployType: 'fly', deployConfig: { appName: 'sentinel', region: 'yyz' }, liveUrl: 'https://sentinel.fly.dev' },
+  { name: 'COBALT Platform', slug: 'cobalt-platform', githubRepo: 'dom-omg/cobalt-platform', deployType: 'fly', deployConfig: { appName: 'cobalt-platform', region: 'yyz' }, repoUrl: 'https://git.qreativelab.io/dom/cobalt-platform' },
+  { name: 'COBALT PQC', slug: 'cobalt-pqc', githubRepo: 'dom-omg/cobalt-pqc', deployType: 'fly', deployConfig: { appName: 'cobalt-pqc', region: 'yyz' }, repoUrl: 'https://git.qreativelab.io/dom/cobalt-pqc' },
+  { name: 'COBALT Sentinel', slug: 'cobalt-sentinel', githubRepo: 'dom-omg/cobalt-sentinel', deployType: 'fly', deployConfig: { appName: 'cobalt-sentinel', region: 'yyz' }, repoUrl: 'https://git.qreativelab.io/dom/cobalt-sentinel' },
+  { name: 'COBALT Live', slug: 'cobalt-live', githubRepo: 'dom-omg/cobalt-live', deployType: 'fly', deployConfig: { appName: 'cobalt-live', region: 'yyz' }, repoUrl: 'https://git.qreativelab.io/dom/cobalt-live' },
+  { name: 'COBALT Forge', slug: 'cobalt-forge', githubRepo: 'dom-omg/cobalt-forge', deployType: 'fly', deployConfig: { appName: 'cobalt-forge', region: 'yyz' }, repoUrl: 'https://git.qreativelab.io/dom/cobalt-forge' },
+  { name: 'COBALT AI', slug: 'cobalt-ai', githubRepo: 'dom-omg/cobalt-ai', deployType: 'fly', deployConfig: { appName: 'cobalt-ai', region: 'yyz' }, repoUrl: 'https://git.qreativelab.io/dom/cobalt-ai' },
+  { name: 'COBALT Verdict', slug: 'cobalt-verdict', githubRepo: 'dom-omg/cobalt-verdict', deployType: 'fly', deployConfig: { appName: 'cobalt-verdict', region: 'yyz' }, repoUrl: 'https://git.qreativelab.io/dom/cobalt-verdict' },
+  { name: 'COBALT COBOL', slug: 'cobalt-cobol', githubRepo: 'dom-omg/cobalt-cobol', deployType: 'airgap', deployConfig: { bundleDir: '/secure/cobalt-cobol', classification: 'PROTECTED-B' }, repoUrl: 'https://git.qreativelab.io/dom/cobalt-cobol' },
 ]
 
 const SEED_ENVIRONMENTS = [
